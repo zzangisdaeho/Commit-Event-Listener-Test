@@ -21,7 +21,6 @@ public class SubTestService {
 
     private final TestEntityRepository testEntityRepository;
 
-    @Async
     public void subService(long seq) {
 
         System.out.println("seq = " + seq);

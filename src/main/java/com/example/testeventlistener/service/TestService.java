@@ -36,13 +36,6 @@ public class TestService {
         applicationEventPublisher.publishEvent(new TestDto(seq));
         applicationEventPublisher.publishEvent(new TestDto(seq));
 
-
-        try {
-            Thread.sleep(8000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         System.out.println("메인은 끝났어");
 //        subTestService.test11(seq);
 
