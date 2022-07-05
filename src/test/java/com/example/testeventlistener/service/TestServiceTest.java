@@ -21,6 +21,9 @@ class TestServiceTest {
     @Autowired
     TestEntityRepository testEntityRepository;
 
+    @Autowired
+    NoTransactionTestService noTransactionTestService;
+
     private long seq;
 
     @BeforeEach
@@ -41,6 +44,17 @@ class TestServiceTest {
 
         testService.mainService(seq);
 
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void test2(){
+        noTransactionTestService.noTransactionTest();
 
         try {
             Thread.sleep(10000);

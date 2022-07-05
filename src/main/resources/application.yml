@@ -2,6 +2,9 @@ logging:
   level:
     org:
       springframework:
+        orm:
+          jpa:
+            JpaTransactionManager: DEBUG
         transaction:
           interceptor: TRACE
       hibernate:
