@@ -17,8 +17,8 @@ public class TestEventListener {
     private final SubTestService subTestService;
 
     @Async
-    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
-//    @EventListener
+//    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
+    @EventListener
     public void testListener(TestDto testDto){
 
         try {

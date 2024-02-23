@@ -31,7 +31,10 @@ class TestServiceTest {
     @Commit
     void initData(){
         TestEntity testEntity = new TestEntity();
-        testEntity.setName("name1");
+        testEntity.setName("parent1");
+
+        testEntity.addChild("child1");
+
         testEntityRepository.save(testEntity);
 
         this.seq = testEntity.getSeq();
@@ -61,5 +64,10 @@ class TestServiceTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    void innerTransactionTest(){
+        testService.noTransactionRead(1L);
     }
 }
